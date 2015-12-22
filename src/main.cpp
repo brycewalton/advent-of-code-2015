@@ -11,8 +11,9 @@ int main (void) {
 	//test03(); // This test is awfully slow - could refactor for fun?
 	//test04(); // This test will always be slow - could try programming md5 myself
 	test05();
-	test06();
-	test07();
+	//test06();
+	//test07();
+	test08();
 
 	int pauser = 0;
 	std::cin >> pauser;
