@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{78EA9F7A-BFA0-40BF-8CCF-A2C7F563BD07}</ProjectGuid>
+    <RootNamespace>AdventOfCode2015</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AdventCoinMiner.cpp" />
+    <ClCompile Include="src\DeliveryParser.cpp" />
+    <ClCompile Include="src\FloorParser.cpp" />
+    <ClCompile Include="src\LightController.cpp" />
+    <ClCompile Include="src\LogicParser.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\md5.cpp" />
+    <ClCompile Include="src\NiceStringTester.cpp" />
+    <ClCompile Include="src\Present.cpp" />
+    <ClCompile Include="src\tests.cpp" />
+    <ClCompile Include="src\util.cpp" />
+    <ClCompile Include="src\Wire.cpp" />
+    <ClCompile Include="src\WireKit.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\input_01_1.txt" />
+    <None Include="res\input_02_1.txt" />
+    <None Include="res\input_03_1.txt" />
+    <None Include="res\input_05.txt" />
+    <None Include="res\input_06.txt" />
+    <None Include="res\input_06_01.txt" />
+    <None Include="res\input_06_02.txt" />
+    <None Include="res\input_07.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AdventCoinMiner.h" />
+    <ClInclude Include="src\DeliveryParser.h" />
+    <ClInclude Include="src\FloorParser.h" />
+    <ClInclude Include="src\House.h" />
+    <ClInclude Include="src\LightController.h" />
+    <ClInclude Include="src\LogicParser.h" />
+    <ClInclude Include="src\md5.h" />
+    <ClInclude Include="src\NiceStringTester.h" />
+    <ClInclude Include="src\Present.h" />
+    <ClInclude Include="src\tests.h" />
+    <ClInclude Include="src\util.h" />
+    <ClInclude Include="src\Wire.h" />
+    <ClInclude Include="src\WireKit.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
