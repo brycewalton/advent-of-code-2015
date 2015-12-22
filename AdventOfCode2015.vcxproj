@@ -61,6 +61,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\AdventCoinMiner.cpp" />
+    <ClCompile Include="src\CharacterCounter.cpp" />
     <ClCompile Include="src\DeliveryParser.cpp" />
     <ClCompile Include="src\FloorParser.cpp" />
     <ClCompile Include="src\LightController.cpp" />
@@ -83,9 +84,11 @@
     <None Include="res\input_06_01.txt" />
     <None Include="res\input_06_02.txt" />
     <None Include="res\input_07.txt" />
+    <None Include="res\input_08.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AdventCoinMiner.h" />
+    <ClInclude Include="src\CharacterCounter.h" />
     <ClInclude Include="src\DeliveryParser.h" />
     <ClInclude Include="src\FloorParser.h" />
     <ClInclude Include="src\House.h" />

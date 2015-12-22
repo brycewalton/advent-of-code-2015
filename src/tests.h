@@ -26,4 +26,7 @@ bool test07();
 bool test07_1();
 bool test07_2();
 
+bool test08();
+bool test08_1();
+
 #endif

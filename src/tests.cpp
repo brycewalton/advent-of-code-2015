@@ -9,6 +9,7 @@
 #include <fstream>
 #include "LightController.h"
 #include "WireKit.h"
+#include "CharacterCounter.h"
 
 bool test01() {
 	bool isOK = test01_1();
@@ -499,6 +500,74 @@ bool test07_2() {
 	}
 
 	wk.print();
+
+	return isOK;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+bool test08() {
+	bool isOK = test08_1();
+
+	std::ifstream file("res/input_08.txt");
+	if (file.is_open()) {
+		unsigned codeLenTotal = 0;
+		unsigned strLenTotal = 0;
+		unsigned encodeLenTotal = 0;
+		std::string line;
+		while (std::getline(file, line)) {
+			//std::cout << "123456789112345678921234567893123456789412345678951234567896" << std::endl;
+			//std::cout << line << std::endl;
+			CharacterCounter::countCharacters(line.c_str());
+			
+			//std::cout << CharacterCounter::getCodeLength() << "/" << CharacterCounter::getStringLength() << std::endl;
+			codeLenTotal += CharacterCounter::getCodeLength();
+			strLenTotal += CharacterCounter::getStringLength();
+			encodeLenTotal += CharacterCounter::getEncodedLength();
+		}
+
+		std::cout << "Answer (08.1): Code length (" << codeLenTotal << ") - Str. Length (" << strLenTotal << ") = " << codeLenTotal - strLenTotal << std::endl;
+		std::cout << "Answer (08.2): Encoded length (" << encodeLenTotal << ") - Code Length (" << codeLenTotal << ") = " << encodeLenTotal - codeLenTotal << std::endl;
+	}
+
+	return isOK;
+}
+
+bool test08_1() {
+	const char *input[] = {
+		"\"\"",
+		"\"abc\"",
+		"\"aaa\\\"aaa\"",
+		"\"\\x27\"",
+	};
+
+	uint16_t outputCode[] = {
+		2,
+		5,
+		10,
+		6,
+	};
+
+	uint16_t outputLen[] = {
+		0,
+		3,
+		7,
+		1,
+	};
+
+	int length = arraySize(input);
+
+	bool isOK = true;
+	std::cout << "Test: CharacterCounter::countCharacters()" << std::endl;
+	for (int i = 0; i < length; ++i) {
+		CharacterCounter::countCharacters(input[i]);
+		unsigned codeLen = CharacterCounter::getCodeLength();
+		unsigned strLen = CharacterCounter::getStringLength();
+
+		bool passedCodeLen = codeLen == outputCode[i];
+		bool passedStrLen = strLen == outputLen[i];
+		std::cout << "  " << passedCodeLen << "/" << passedStrLen << ": countCharacters(" << input[i] << ") -> " << codeLen << "/" << strLen << " (" << outputCode[i] << "/" << outputLen[i] << ")" << std::endl;
+		isOK &= passedCodeLen && passedStrLen;
+	}
 
 	return isOK;
 }
